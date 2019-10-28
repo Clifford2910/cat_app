@@ -4,7 +4,7 @@ require 'shotgun'
 set :session_secret, 'super secret'
 
 get '/' do
-  "Hello World! are you there"
+  "Hello World!"
 end
 
 get '/secret' do
@@ -12,7 +12,5 @@ get '/secret' do
 end
 
 get '/cat' do
-  "<div style='border: 100px dotted green'>
-    <img src='http://bit.ly/1eze8aE'>
-  <div>"
+  erb(:index)
 end
