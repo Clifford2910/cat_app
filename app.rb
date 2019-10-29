@@ -13,13 +13,17 @@ get '/secret' do
   "Sneaky sneaky...."
 end
 
-get '/named-cat' do
-  p params
-  @name = params[:name]
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
   erb :index
 end
 
-get '/random-cat' do
-  @name = ["Amigo", "Oscar", "Viking"].sample
+get '/cat-form' do
+  erb :cat_form
+end
+
+post '/named-cat' do
+  p params
+  @name = params[:name]
   erb :index
 end
