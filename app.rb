@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'shotgun'
+# http://localhost:4567
 # shotgun app.rb -p 4567
 
 set :session_secret, 'super secret'
@@ -12,7 +13,13 @@ get '/secret' do
   "Sneaky sneaky...."
 end
 
-get '/cat' do
+get '/named-cat' do
+  p params
+  @name = params[:name]
+  erb :index
+end
+
+get '/random-cat' do
   @name = ["Amigo", "Oscar", "Viking"].sample
   erb :index
 end
