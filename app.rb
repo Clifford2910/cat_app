@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'shotgun'
+# shotgun app.rb -p 4567
 
 set :session_secret, 'super secret'
 
@@ -12,5 +13,6 @@ get '/secret' do
 end
 
 get '/cat' do
-  erb(:index)
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb :index
 end
